@@ -1,7 +1,7 @@
-package com.techlab.products;
+package com.techlab.models;
 
 public class Comida extends Producto {
-    private String fechaVencimiento;
+    private final String fechaVencimiento;
 
     public Comida(String nombre, double precio, int stock, String fechaVencimiento) {
         super(nombre, precio, stock);
@@ -9,7 +9,7 @@ public class Comida extends Producto {
     }
 
     @Override
-    public String mostrarDetalles() {
-        return getNombre() + " | Vence: " + fechaVencimiento;
+    public String descripcionDetallada() {
+        return "Comida - " + obtenerNombre() + ", Vence: " + fechaVencimiento;
     }
 }

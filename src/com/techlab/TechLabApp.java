@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Main {
+public class TechLabApp {
     private static final Scanner scanner = new Scanner(System.in);
     private static final ProductoService productoService = new ProductoService(new ProductoRepository());
     private static final PedidoService pedidoService = new PedidoService(new PedidoRepository());

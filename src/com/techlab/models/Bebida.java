@@ -1,17 +1,15 @@
-package com.techlab.products;
-
-import java.io.Serializable;
+package com.techlab.models;
 
 public class Bebida extends Producto {
-    private double volumenLitros;
+    private final double litros;
 
-    public Bebida(String nombre, double precio, int stock, double volumenLitros) {
+    public Bebida(String nombre, double precio, int stock, double litros) {
         super(nombre, precio, stock);
-        this.volumenLitros = volumenLitros;
+        this.litros = litros;
     }
 
     @Override
-    public String mostrarDetalles() {
-        return getNombre() + " | Litros: " + volumenLitros;
+    public String descripcionDetallada() {
+        return "Bebida - " + obtenerNombre() + ", Litros: " + litros;
     }
 }

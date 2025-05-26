@@ -1,9 +1,9 @@
-package com.techlab.products;
+package com.techlab.models;
 
 public abstract class Producto {
     private static int contador = 0;
-    private int id;
-    private String nombre;
+    private final int id;
+    private final String nombre;
     private double precio;
     private int stock;
 
@@ -14,13 +14,39 @@ public abstract class Producto {
         this.stock = stock;
     }
 
-    public int getId() { return id; }
-    public String getNombre() { return nombre; }
-    public double getPrecio() { return precio; }
-    public int getStock() { return stock; }
+    public int obtenerId() {
+        return id;
+    }
 
-    public void setPrecio(double precio) { this.precio = precio; }
-    public void setStock(int stock) { this.stock = stock; }
+    public String obtenerNombre() {
+        return nombre;
+    }
 
-    public abstract String mostrarDetalles();
+    public double obtenerPrecio() {
+        return precio;
+    }
+
+    public int obtenerStock() {
+        return stock;
+    }
+
+    public void actualizarPrecio(double nuevoPrecio) {
+        if (nuevoPrecio > 0) {
+            this.precio = nuevoPrecio;
+        }
+    }
+
+    public void modificarStock(int cantidad) {
+        if (cantidad >= 0) {
+            this.stock = cantidad;
+        }
+    }
+
+    public void disminuirStock(int cantidad) {
+        if (cantidad <= stock) {
+            this.stock -= cantidad;
+        }
+    }
+
+    public abstract String descripcionDetallada();
 }
